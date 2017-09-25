@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ESDS</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/custom.css">
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="row row-header">
+            <h3>Filter</h3>
+        </div>
+        <div class="row row-input">
+            <div class="col-md-5">
+                <div class="row">
+                    <div class="form-group">
+                        <label class="radio-inline text-color">
+                            <input type="radio" name="location">Show Top 10 Locations
+                        </label>
+                    </div>
+                    <div class="form-group text-color" >
+                        <label class="radio-inline">
+                            <input  type="radio" name="location">Select Specific Locations:
+                        </label>
+
+                    </div>
+                    <div class="form-group">
+                        <select name="location[]" id="select-location" class="text-color select-filter select-multiple" multiple="multiple">
+                            <option value="" selected>Location Filter(Multiselect)</option>
+                            <option value="">Location Filter(Multiselect)</option>
+                        </select>
+                        <button type="button" class="btn-select" id="btn-location">
+                            <i class="fa fa-caret-down" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div class="form-group ">
+                        <select name="indicator[]" id="select-indicator" class="text-color select-filter select-multiple" multiple="multiple">
+                            <option value="" selected>Indicator Filter(Multiselect)</option>
+                            <option value="">Indicator Filter(Multiselect)</option>
+                        </select>
+                        <button type="button" class="btn-select" id="btn-indicator">
+                            <i class="fa fa-caret-down" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="btn-group pull-right-custom">
+                        <button type="reset"  class="btn-filter">
+                            <strong>Reset</strong>
+                        </button>
+                        <button type="button" class="btn-filter">
+                            <strong>Filter</strong>
+                        </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="btn-group mgn-export pull-right-custom">
+                        <button type="button" class="btn-export">Export Data</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="btn-group  mgn-export pull-right-custom">
+                        <button type="button"  class="btn-export">Export Graph</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js"></script>
+    <script  type="text/javascript">
+        $(document).ready(function() {
+            $('.select-multiple').select2();
+            $('#btn-location').click(function(){
+                $('#select-location').select2('open');
+            });
+            $('#btn-indicator').click(function(){
+                $('#select-indicator').select2('open');
+            });
+        });
+    </script>
+
+</body>
+</html>
