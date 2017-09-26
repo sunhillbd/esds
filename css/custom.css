@@ -1,9 +1,12 @@
 .row-header {
      margin-right: -25px;
      margin-left: -50px;
+    margin-bottom: 40px;
 }
-.row-input{
-    margin-top: 40px;
+
+.filter-nput{
+    margin-left: 10px;
+    margin-top: 30px;
 }
 
 .btn-filter{
@@ -11,14 +14,14 @@
     height: 30px;
     border: 2px solid #1F72C7;
     background-color: #EDEDED;
-    color: #65A8DC;
+    color: #1F72C7;
 }
 .btn-export{
     width: 120px;
     height: 30px;
     border: 2px solid #1F72C7;
     background-color: #EDEDED;
-    color: #65A8DC;
+    color: #1F72C7;
 }
 
 .select-filter{
@@ -43,12 +46,12 @@
     margin-top: 2px;
 }
 .text-color{
-    color:#65A8DC ;
+    color:#1F72C7;
 }
 .btn-select{
     background-color: #EDEDED;
     width: 10%;
-    height: 36px;
+    height: 34px;
     border-width: 2px 2px 2px 1px;
     border-style: solid;
     border-color: #1F72C7;
@@ -69,19 +72,50 @@
     float: right;
 
 }
-input[type='radio'] {
-    transform: scale(1.4);
+/*input[type='radio'] {
+    transform: scale(1.3);
+}*/
+input[type=radio]{
+     display:none;
 }
-input[type='radio']:checked:after {
-    transform: scale(.4);
-    width: 15px;
-    height: 15px;
-    border-radius: 15px;
-    top: -2px;
-    left: -1px;
-    position: relative;
-    background-color: #1F72C7;
-    content: '';
+input[type=radio] + label:before{
+    content: '•';
     display: inline-block;
-    visibility: visible;
+    border-radius: 15px;
+    width: 20px;
+    height: 20px;
+    background: #FFFFFF;
+    color: #FFFFFF;
+    border: 3px solid #1F72C7;
+    line-height: 14px;
+    text-align: center;
+    margin-right: 5px;
+    font-size: 30px;
+    vertical-align: middle;
 }
+input[type=radio]:checked + label:before{
+    color: #1F72C7;
+}
+@-moz-document url-prefix() {
+    input[type=radio] + label:before{
+        line-height: 10px;
+        margin-right: 4px;
+        padding-left:1px;
+        font-size: 34px;
+    }
+}
+
+input.select2-search__field::-moz-placeholder { /* Firefox 19+ */
+    color: #1F72C7;;
+}
+input.select2-search__field::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #1F72C7;;
+}
+.hr-gap{
+    margin-left: 20px;
+}
+.filter-border{
+    border: 1px solid grey;
+    min-height: 500px;
+}
+

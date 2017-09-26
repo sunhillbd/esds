@@ -4,89 +4,109 @@
     <meta charset="UTF-8">
     <title>ESDS</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/custom.css">
 
 </head>
 <body>
 
-    <div class="container">
-        <div class="row row-header">
-            <h3>Filter</h3>
-        </div>
-        <div class="row row-input">
-            <div class="col-md-5">
-                <div class="row">
-                    <div class="form-group">
-                        <label class="radio-inline text-color">
-                            <input type="radio" name="location">Show Top 10 Locations
-                        </label>
+    <div class="container" style="margin: 0 auto">
+
+        <div class="row" >
+            <div class="col-md-6 filter-border">
+                <div class="col-md-11">
+                    <div class="row">
+                        <h3>Results</h3>
                     </div>
-                    <div class="form-group text-color" >
-                        <label class="radio-inline">
-                            <input  type="radio" name="location">Select Specific Locations:
-                        </label>
+                    <div class="row " >
+                        <div id="container"
+                             style="height: 400px; min-width: 310px; max-width: 800px; margin: 0 auto;  ">
+                        </div>
+
 
                     </div>
-                    <div class="form-group">
-                        <select name="location[]" id="select-location" class="text-color select-filter select-multiple" multiple="multiple">
-                            <option value="" selected>Location Filter(Multiselect)</option>
-                            <option value="">Location Filter(Multiselect)</option>
-                        </select>
-                        <button type="button" class="btn-select" id="btn-location">
-                            <i class="fa fa-caret-down" aria-hidden="true"></i>
-                        </button>
+                </div>
+
+            </div>
+            <div class="col-md-5 hr-gap filter-border" >
+                <div class="col-md-11">
+                    <div class="row ">
+                        <h3>Filter</h3>
                     </div>
-                    <div class="form-group ">
-                        <select name="indicator[]" id="select-indicator" class="text-color select-filter select-multiple" multiple="multiple">
-                            <option value="" selected>Indicator Filter(Multiselect)</option>
-                            <option value="">Indicator Filter(Multiselect)</option>
-                        </select>
-                        <button type="button" class="btn-select" id="btn-indicator">
-                            <i class="fa fa-caret-down" aria-hidden="true"></i>
-                        </button>
+                    <div class="row filter-nput">
+                        <div  class="form-group text-color">
+                            <input checked type="radio" name="location" id="location1" /><label for="location1"></label>
+                            Show Top 10 Locations
+                        </div>
+                        <div class="form-group text-color" >
+                            <input type="radio" name="location" id="location2" /><label for="location2"></label>
+                            Select Specific Locations:
+                        </div>
+                        <div class="form-group">
+                            <select name="location[]" id="select-location" class="text-color select-filter select-multiple"  multiple="multiple">
+                                <option value="1" >Bangalore</option>
+                                <option value="2">Delhi</option>
+                                <option value="3">Mumbai</option>
+                            </select>
+                            <button type="button" class="btn-select" id="btn-location">
+                                <i class="fa fa-caret-down" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="form-group ">
+                            <select name="indicator[]" id="select-indicator" class="text-color select-filter select-multiple" multiple="multiple">
+                                <option value="1" >External</option>
+                                <option value="2">Large Attachments</option>
+                                <option value="3">Personal Emails</option>
+                                <option value="4">Suspicious Language(External)</option>
+                                <option value="5">Suspicious Language(Internal)</option>
+                                <option value="6">External BCC</option>
+                                <option value="7">Forwarded Emails</option>
+                                <option value="8">Total</option>
+                            </select>
+                            <button type="button" class="btn-select" id="btn-indicator">
+                                <i class="fa fa-caret-down" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="btn-group pull-right-custom">
+                            <button type="reset"  class="btn-filter">
+                                Reset
+                            </button>
+                            <button type="button" class="btn-filter">
+                                Filter
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="btn-group mgn-export pull-right-custom">
+                            <button type="button" class="btn-export">Export Data</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="btn-group  mgn-export pull-right-custom">
+                            <button type="button"  class="btn-export">Export Graph</button>
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="btn-group pull-right-custom">
-                        <button type="reset"  class="btn-filter">
-                            <strong>Reset</strong>
-                        </button>
-                        <button type="button" class="btn-filter">
-                            <strong>Filter</strong>
-                        </button>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="btn-group mgn-export pull-right-custom">
-                        <button type="button" class="btn-export">Export Data</button>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="btn-group  mgn-export pull-right-custom">
-                        <button type="button"  class="btn-export">Export Graph</button>
-                    </div>
-                </div>
+
 
             </div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js"></script>
-    <script  type="text/javascript">
-        $(document).ready(function() {
-            $('.select-multiple').select2();
-            $('#btn-location').click(function(){
-                $('#select-location').select2('open');
-            });
-            $('#btn-indicator').click(function(){
-                $('#select-indicator').select2('open');
-            });
-        });
-    </script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/heatmap.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="js/chart.js"></script>
+    <script src="js/select.js"></script>
+
 
 </body>
 </html>
